@@ -6,9 +6,8 @@ import { shuffle } from '../utils/array'
 
 const Main = ({photos}) => {
 
-
 return (<Grid columns = {[2, null, 3]}>
-        {photos.map(edge => <Box p={2} backgroundColor="primary" ><Img fluid = {edge.node.fluid} /></Box>)}
+        {photos.map(edge => <Box p={2}><Img fluid = {edge.node.fluid} /></Box>)}
         </Grid>
         )
 }

@@ -5,6 +5,7 @@ import { Flex, Grid, Container } from "theme-ui"
 
 const Layout = ({ children }) => {
     return (<Container>
+        
         <Header />
         <Grid columns = {[2, '6fr 1fr']}>
             <main>
