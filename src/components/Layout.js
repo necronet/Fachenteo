@@ -1,21 +1,14 @@
 import React from 'react'
 import Header from './Header'
-import Sidebar from './Sidebar'
-import { Flex, Grid, Container } from "theme-ui"
+import { Grid, Container } from "theme-ui"
 
 const Layout = ({ children }) => {
     return (<Container>
-        
-        <Header />
-        <Grid columns = {[2, '6fr 1fr']}>
+            <Header />
             <main>
                 {children}
             </main>
-            <aside>
-                <Sidebar />
-            </aside>
-        </Grid>
-    </Container>)
+        </Container>)
 }
 
 export default Layout;

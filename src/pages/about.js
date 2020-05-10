@@ -1,3 +1,11 @@
-import React from 'react'
+import React from "react"
+import Layout from '../components/Layout'
+import ProfileContainer from '../components/ProfileContainer'
 
-export default ()=><div>About page solely</div>
+const Index = ({ data }) => {
+    return (<Layout> 
+                <ProfileContainer />
+            </Layout>)
+}
+
+export default Index;

@@ -16,9 +16,12 @@
     "gatsby-source-filesystem": "^2.3.1",
     "gatsby-transformer-sharp": "^2.5.1",
     "git": "^0.1.5",
+    "lodash": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "theme-ui": "^0.3.1"
+    "theme-ui": "^0.3.1",
+    "theme-ui-typography": "^0.1.7",
+    "typography-theme-funston": "^0.16.19"
   },
   "devDependencies": {}
 }

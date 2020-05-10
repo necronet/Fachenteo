@@ -11,24 +11,18 @@ const Header = ({ data }) => (
         alignItems: 'center',
         variant: 'styles.header',
     }}>
-        <Link to='/'
-            sx={{
-                variant: 'styles.navlink',
-                p: 2,
-            }}>
-            {data.site.siteMetadata.title}
-        </Link>
+        <Link sx={{variant: 'links.main'}} to='/'>{data.site.siteMetadata.title}</Link>
         <div sx={{ mx: 'auto' }} />
         <Link to='/blog'
             sx={{
-                variant: 'styles.navlink',
+                variant: 'links.nav',
                 p: 2,
             }}>
             Under the hood
         </Link>
         <Link to='/about'
             sx={{
-                variant: 'styles.navlink',
+                variant: 'links.nav',
                 p: 2,
             }}>
             About
