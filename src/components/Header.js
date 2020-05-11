@@ -33,37 +33,38 @@ const Header = ({ data }) => (
 
 export default () => {
     return (
-        <StaticQuery query={
-            graphql`query IndexPageQuery {
-                        
-                        site {
-                              siteMetadata {
-                                  title 
-                                  }
-                          }
-                
-                        allFile(filter: {relativeDirectory:{eq:"featured"}}) {
-                          edges {
-                        node {
-                          childImageSharp {
-                            
-                            fluid(maxWidth: 400, maxHeight: 250) {
-                          base64
-                          aspectRatio
-                          src
-                          srcSet
-                          sizes
-                              
-                          }
-                          
-                          }
-                        }
-                        }
-                      }
-                        
-                  }
-                    `}
+        <StaticQuery query={HeaderQuery}
             render={data => <Header data={data} />}
         />
     )
 }
+
+const HeaderQuery = graphql`query IndexPageQuery {
+                        
+    site {
+          siteMetadata {
+              title 
+              }
+      }
+
+    allFile(filter: {relativeDirectory:{eq:"featured"}}) {
+      edges {
+    node {
+      childImageSharp {
+        
+        fluid(maxWidth: 400, maxHeight: 250) {
+      base64
+      aspectRatio
+      src
+      srcSet
+      sizes
+          
+      }
+      
+      }
+    }
+    }
+  }
+    
+}
+`;
