@@ -95,4 +95,4 @@ $RECYCLE.BIN/
 !.elasticbeanstalk/*.global.yml
 
 #Photography assets
-src/photos
+#src/photos
