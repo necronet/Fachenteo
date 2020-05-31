@@ -4,8 +4,11 @@ import funstonTheme from 'typography-theme-funston'
 
 const typography = toTheme(funstonTheme)
 
-
 export default merge(typography, {
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: '"Avenir Next", sans-serif',
+  },
   colors: {
     text: "#252422", //erie black
     background: "#FFFCF2", //floral white
@@ -28,8 +31,12 @@ export default merge(typography, {
       height: 120,
       borderRadius: 99999,
     },
+    logo: {
+      width: 64,
+      height: 64
+    }
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
+  fontSizes: [14, 16, 20, 22, 26, 32, 48, 64, 72],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
 
   links: {

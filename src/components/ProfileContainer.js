@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import { Grid, Container, Flex, Box } from 'theme-ui'
+import { Grid, Container, Box } from 'theme-ui'
 import ProfileBox from './ProfileBox'
 import Img from 'gatsby-image'
 
@@ -14,28 +14,28 @@ const ProfileContainer = () => {
     return (
         <Container p={4}>
             <Grid columns={[1, null, '1fr 2fr', '1fr 4fr']} gap = {0} p = {4}>
+            <Box sx = {{ textAlign: 'center'}}>
             <StaticQuery query = {PhotoProfileQuery} render = { data => <PhotoProfile data = {data} /> } />
+            <div>
+                <ProfileBox type="github" />
+                <ProfileBox type="linkedin" />
+                <ProfileBox type="twitter" />
+            </div>
+            </Box>
             <Box>
-                    As a software developer I've worked with multiple companies accross the world from Booking.com in the netherlands
+                    <p>
+                    <b>Fachenteo</b> is a static website built with gatsby in order to keep personal photography hobby up in the cloud. The site serve only personal purpose
+                    of self improvement both in photography and React development, if you are interested in the tecnology behind this site you can visit Under the hood section
+                    where I go into detail on how the site was built.
+                    </p>
+                    <p>
+                    <b>Fachenteo</b> is just a site that I'd like to keep personal photographies that otherwise don't like to post on social media. As a software developer I've worked with multiple companies accross the world from Booking.com in the netherlands
                     all the way to many companies in the bay area including Stubhub, Ebay, and Paypal Inc. I've always enjoy learning and toying
-                    around with new paradigm, platforms, frameworks and tools. This site is intended to be yet another learning experience with building
-                    a relative quick static website with GatsbyJS and other React oriented tools. You can read more about how at the under the hood section.
+                    around with new paradigm, platforms, frameworks and tools.
+                    </p>
             </Box>
         </Grid>
         
-        <Grid
-            sx={{
-                maxWidth: 512,
-                mx: 'auto',
-                px: 3,
-                py: 4,
-            }}
-            columns={[2, null, 4]}>
-            <ProfileBox type="stackoverflow" />
-            <ProfileBox type="github" />
-            <ProfileBox type="linkedin" />
-            <ProfileBox type="twitter" />
-        </Grid>
     </Container>)
 }
 

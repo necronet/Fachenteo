@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui'
 import React from 'react'
 import { Link, StaticQuery, graphql } from "gatsby"
+import logo from "../assets/logo.svg" 
 
 
 const Header = ({ data }) => (
@@ -10,16 +11,24 @@ const Header = ({ data }) => (
         display: 'flex',
         alignItems: 'center',
         variant: 'styles.header',
-    }}>
-        <Link sx={{variant: 'links.main'}} to='/'>{data.site.siteMetadata.title}</Link>
+        padding: 16
+    }}> 
+        <Link sx={{variant: 'links.main'}} to='/'>
+            <img sx={{variant: 'images.logo', display: 'inline-block'}} src={logo} alt="Logo" />
+        </Link>
+        <div>
+            <Link sx={{variant: 'links.main'}} to='/'>
+                <h1 sx = {{paddingLeft: 16, margin: 0}}>{data.site.siteMetadata.title}</h1>
+            </Link>
+        </div>
         <div sx={{ mx: 'auto' }} />
-        <Link to='/blog'
+        {/* <Link to='/underthehood'
             sx={{
                 variant: 'links.nav',
                 p: 2,
             }}>
             Under the hood
-        </Link>
+        </Link> */}
         <Link to='/about'
             sx={{
                 variant: 'links.nav',

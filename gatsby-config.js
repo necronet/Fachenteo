@@ -4,7 +4,20 @@ require("dotenv").config({
     path: `.env.${activeEnv}`,
 })*/
 
-const fileSystemPlugin = { resolve: `gatsby-source-filesystem`, options: { path: `./src/photos/` } }
+const photoFileSystemPlugin = { resolve: `gatsby-source-filesystem`, options: { path: `./src/photos/` } }
+const assetsFileSystemPlugin = { resolve: `gatsby-source-filesystem`, name: `assets`, options: { path: `./src/assets/` } }
+
+const manifestPlugin = {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: `Fachenteo`,
+      short_name: `Fachenteo`,
+      start_url: `/`,
+      background_color: `#f7f0eb`,
+      display: `standalone`,
+      icon: "src/assets/favico/favicon.png"
+    },
+  }
 
 module.exports = {
     siteMetadata: {
@@ -15,6 +28,9 @@ module.exports = {
         `gatsby-transformer-sharp`, 
         `gatsby-plugin-sharp`,
         'gatsby-plugin-theme-ui',
-        fileSystemPlugin
+        `gatsby-plugin-mdx`, 
+        photoFileSystemPlugin,
+        assetsFileSystemPlugin,
+        manifestPlugin
     ]
 }
