@@ -58,20 +58,16 @@ const HeaderQuery = graphql`query IndexPageQuery {
 
     allFile(filter: {relativeDirectory:{eq:"featured"}}) {
       edges {
-    node {
-      childImageSharp {
+        node {
+            childImageSharp {
         
-        fluid(maxWidth: 400, maxHeight: 250) {
-      base64
-      aspectRatio
-      src
-      srcSet
-      sizes
-          
-      }
-      
-      }
-    }
+            fluid(maxWidth: 400, maxHeight: 250) {
+                    base64
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+        }}}
     }
   }
     

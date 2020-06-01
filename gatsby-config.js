@@ -6,6 +6,14 @@ require("dotenv").config({
 
 const photoFileSystemPlugin = { resolve: `gatsby-source-filesystem`, options: { path: `./src/photos/` } }
 const assetsFileSystemPlugin = { resolve: `gatsby-source-filesystem`, name: `assets`, options: { path: `./src/assets/` } }
+const gatsbySharpPlugin = {
+                resolve: `gatsby-plugin-sharp`,
+                options: {
+                useMozJpeg: false,
+                stripMetadata: true,
+                defaultQuality: 75,
+                },
+  }
 
 const manifestPlugin = {
     resolve: `gatsby-plugin-manifest`,
@@ -31,6 +39,7 @@ module.exports = {
         `gatsby-plugin-mdx`, 
         photoFileSystemPlugin,
         assetsFileSystemPlugin,
-        manifestPlugin
+        manifestPlugin,
+        gatsbySharpPlugin
     ]
 }

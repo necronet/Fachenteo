@@ -45,7 +45,7 @@ const PhotoProfileQuery = graphql`query PhotoProfileQuery {
 
     file(relativePath:{ eq: "myself/moi.JPG"}) {
     	childImageSharp {
-        	fixed(width: 150) {
+            fixed(width: 150, grayscale: true) {
                 ...GatsbyImageSharpFixed
         }
       }
